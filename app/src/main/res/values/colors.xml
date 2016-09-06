@@ -6,4 +6,6 @@
     <color name="textColorPrimary">#ffffff00</color>
     <color name="colorButton">#ff2196f3</color>
     <color name="colorTransparent">#00ffffff</color>
+    <color name="inactiveTabTextColor">#ffe0e0e0</color>
+    <color name="activeTabTextColor">#ffffffff</color>
 </resources>

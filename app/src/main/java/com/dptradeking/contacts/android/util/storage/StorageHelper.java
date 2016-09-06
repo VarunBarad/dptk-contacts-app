@@ -3,6 +3,12 @@ package com.dptradeking.contacts.android.util.storage;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.dptradeking.contacts.android.model.SubBroker;
+import com.google.gson.Gson;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
 /**
  * Creator: vbarad
  * Date: 2016-09-05
@@ -33,5 +39,11 @@ public class StorageHelper {
   public StorageHelper setSubBrokersJson(String subBrokersJson) {
     this.preferences.edit().putString(KEY_SUB_BROKERS, subBrokersJson).apply();
     return this;
+  }
+
+  public ArrayList<SubBroker> getSubBrokers() {
+    Gson gson = new Gson();
+    ArrayList<SubBroker> subBrokers = new ArrayList<>(Arrays.asList(gson.fromJson(this.getSubBrokersJson(), SubBroker[].class)));
+    return subBrokers;
   }
 }

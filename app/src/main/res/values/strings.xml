@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">DP TradeKING Contacts</string>
+    <string name="headOffice_name">Head-Office</string>
+    <string name="branches_name">Branches</string>
+    <string name="subBrokers_name">Sub-Brokers</string>
 
     <string name="tools_lorem_ipsum" translatable="false">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</string>
 </resources>
