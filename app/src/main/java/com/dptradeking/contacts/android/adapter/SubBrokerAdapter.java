@@ -120,10 +120,10 @@ public class SubBrokerAdapter extends RecyclerView.Adapter<SubBrokerAdapter.View
       TransitionManager.beginDelayedTransition(this.cardItem);
 
       if (isDetailsVisible) {
-        this.imageButtonToggle.setImageResource(R.drawable.ic_expand_more_black);
+        this.imageButtonToggle.setImageResource(R.drawable.ic_expand_down_black);
         this.viewGroupDetails.setVisibility(View.GONE);
       } else {
-        this.imageButtonToggle.setImageResource(R.drawable.ic_expand_less_black);
+        this.imageButtonToggle.setImageResource(R.drawable.ic_expand_up_black);
         this.viewGroupDetails.setVisibility(View.VISIBLE);
       }
 

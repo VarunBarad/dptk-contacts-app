@@ -27,6 +27,9 @@ public class Branch {
   @SerializedName("contactNumber")
   private String contactNumber;
   @Expose
+  @SerializedName("address")
+  private String address;
+  @Expose
   @SerializedName("executives")
   private ArrayList<Executive> executives;
 
@@ -56,6 +59,10 @@ public class Branch {
 
   public String getContactNumber() {
     return contactNumber;
+  }
+
+  public String getAddress() {
+    return address;
   }
 
   public ArrayList<Executive> getExecutives() {

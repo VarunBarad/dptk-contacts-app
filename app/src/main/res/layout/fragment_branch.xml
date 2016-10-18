@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:id="@+id/employeeDetails"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/branchDetails">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView_branchEmployee"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:soundEffectsEnabled="true" />
+    </android.support.v7.widget.LinearLayoutCompat>
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:id="@+id/branchDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:paddingEnd="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingStart="10dp"
+            android:paddingTop="10dp">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/textView_branchDetails_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:textColor="#ffeeeeee"
+                android:textIsSelectable="true"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:text="Vallabh Vidyanagar" />
+
+            <android.support.v7.widget.AppCompatImageButton
+                android:id="@+id/imageButton_branchDetails_toggle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:theme="@style/AppTheme.TransparentButton"
+                android:tint="#ffeeeeee"
+                app:srcCompat="@drawable/ic_expand_up_black" />
+        </android.support.v7.widget.LinearLayoutCompat>
+
+
+        <android.support.v7.widget.LinearLayoutCompat
+            android:id="@+id/branchDetailsContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:orientation="vertical"
+            android:paddingBottom="10dp"
+            android:paddingEnd="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingStart="10dp"
+            android:paddingTop="10dp"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <android.support.v7.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp">
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:scaleType="fitCenter"
+                    android:tint="#ffeeeeee"
+                    app:srcCompat="@drawable/ic_contact_phone_black" />
+
+                <android.support.v4.widget.Space
+                    android:layout_width="15dp"
+                    android:layout_height="match_parent" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/textView_branchDetails_mobile"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical|start"
+                    android:textColor="#ffeeeeee"
+                    android:textIsSelectable="true"
+                    android:textSize="16sp"
+                    tools:text="+919879842236" />
+            </android.support.v7.widget.LinearLayoutCompat>
+
+            <android.support.v7.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp">
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:scaleType="fitCenter"
+                    android:tint="#ffeeeeee"
+                    app:srcCompat="@drawable/ic_business_black" />
+
+                <android.support.v4.widget.Space
+                    android:layout_width="15dp"
+                    android:layout_height="match_parent" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/textView_branchDetails_address"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="start|fill_horizontal"
+                    android:textColor="#ffeeeeee"
+                    android:textIsSelectable="true"
+                    android:textSize="16sp"
+                    tools:text="@string/tools_lorem_ipsum" />
+            </android.support.v7.widget.LinearLayoutCompat>
+
+        </android.support.v7.widget.LinearLayoutCompat>
+    </android.support.v7.widget.LinearLayoutCompat>
+
+</RelativeLayout>

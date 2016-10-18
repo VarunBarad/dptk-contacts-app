@@ -51,6 +51,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
       case R.id.button_home_departments:
         break;
       case R.id.button_home_branches:
+        BranchesActivity.launchActivity(this);
         break;
       case R.id.button_home_subBrokers:
         SubBrokersActivity.launchActivity(this);
@@ -83,7 +84,9 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     this.dismissProgressDialog();
     try {
       String subBrokersJson = response.getJSONObject("message").getJSONArray("subBrokers").toString();
+      String branchesJson = response.getJSONObject("message").getJSONArray("branches").toString();
       this.storageHelper
+          .setBranchesJson(branchesJson)
           .setSubBrokersJson(subBrokersJson);
     } catch (JSONException e) {
       e.printStackTrace();
