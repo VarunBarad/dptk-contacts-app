@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 import com.dptradeking.contacts.android.model.Branch;
+import com.dptradeking.contacts.android.model.Department;
 import com.dptradeking.contacts.android.model.SubBroker;
 import com.google.gson.Gson;
 
@@ -19,6 +20,7 @@ public class StorageHelper {
   private static final String FILE_NAME = "dp-contacts-prefs";
   private static final String KEY_SUB_BROKERS = "sub-brokers";
   private static final String KEY_BRANCHES = "branches";
+  private static final String KEY_DEPARTMENTS = "departments";
 
   private SharedPreferences preferences;
 
@@ -36,6 +38,10 @@ public class StorageHelper {
 
   public boolean hasBranchesJson() {
     return this.preferences.contains(KEY_BRANCHES);
+  }
+
+  public boolean hasDepartmentsJson() {
+    return this.preferences.contains(KEY_DEPARTMENTS);
   }
 
   public String getSubBrokersJson() {
@@ -56,6 +62,15 @@ public class StorageHelper {
     return this;
   }
 
+  public String getDepartmentsJson() {
+    return this.preferences.getString(KEY_DEPARTMENTS, null);
+  }
+
+  public StorageHelper setDepartmentsJson(String departmentsJson) {
+    this.preferences.edit().putString(KEY_DEPARTMENTS, departmentsJson).apply();
+    return this;
+  }
+
   public ArrayList<SubBroker> getSubBrokers() {
     Gson gson = new Gson();
     ArrayList<SubBroker> subBrokers = new ArrayList<>(Arrays.asList(gson.fromJson(this.getSubBrokersJson(), SubBroker[].class)));
@@ -66,5 +81,11 @@ public class StorageHelper {
     Gson gson = new Gson();
     ArrayList<Branch> branches = new ArrayList<>(Arrays.asList(gson.fromJson(this.getBranchesJson(), Branch[].class)));
     return branches;
+  }
+
+  public ArrayList<Department> getDepartments() {
+    Gson gson = new Gson();
+    ArrayList<Department> departments = new ArrayList<>(Arrays.asList(gson.fromJson(this.getDepartmentsJson(), Department[].class)));
+    return departments;
   }
 }
