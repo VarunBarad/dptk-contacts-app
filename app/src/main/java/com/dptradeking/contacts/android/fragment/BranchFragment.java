@@ -48,7 +48,7 @@ public class BranchFragment extends Fragment implements View.OnClickListener {
    * this fragment using the provided parameters.
    *
    * @param branch Branch to be displayed in this fragment.
-   * @return A new instance of fragment SubBrokerFragment.
+   * @return A new instance of fragment BranchFragment.
    */
   public static BranchFragment newInstance(Branch branch) {
     BranchFragment fragment = new BranchFragment();
