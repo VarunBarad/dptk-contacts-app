@@ -49,6 +49,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
   public void onClick(View view) {
     switch (view.getId()) {
       case R.id.button_home_departments:
+        DepartmentsActivity.launchActivity(this);
         break;
       case R.id.button_home_branches:
         BranchesActivity.launchActivity(this);
@@ -85,9 +86,11 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     try {
       String subBrokersJson = response.getJSONObject("message").getJSONArray("subBrokers").toString();
       String branchesJson = response.getJSONObject("message").getJSONArray("branches").toString();
+      String departmentsJson = response.getJSONObject("message").getJSONArray("headOffice").toString();
       this.storageHelper
           .setBranchesJson(branchesJson)
-          .setSubBrokersJson(subBrokersJson);
+          .setSubBrokersJson(subBrokersJson)
+          .setDepartmentsJson(departmentsJson);
     } catch (JSONException e) {
       e.printStackTrace();
       this.onErrorResponse(new VolleyError());
