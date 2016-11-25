@@ -44,8 +44,8 @@ public class StorageHelper {
     return this.preferences.contains(KEY_DEPARTMENTS);
   }
 
-  public String getSubBrokersJson() {
-    return this.preferences.getString(KEY_SUB_BROKERS, null);
+  private String getSubBrokersJson() {
+    return this.preferences.getString(KEY_SUB_BROKERS, "[]");
   }
 
   public StorageHelper setSubBrokersJson(String subBrokersJson) {
@@ -53,8 +53,8 @@ public class StorageHelper {
     return this;
   }
 
-  public String getBranchesJson() {
-    return this.preferences.getString(KEY_BRANCHES, null);
+  private String getBranchesJson() {
+    return this.preferences.getString(KEY_BRANCHES, "[]");
   }
 
   public StorageHelper setBranchesJson(String branchesJson) {
@@ -62,8 +62,8 @@ public class StorageHelper {
     return this;
   }
 
-  public String getDepartmentsJson() {
-    return this.preferences.getString(KEY_DEPARTMENTS, null);
+  private String getDepartmentsJson() {
+    return this.preferences.getString(KEY_DEPARTMENTS, "[]");
   }
 
   public StorageHelper setDepartmentsJson(String departmentsJson) {
