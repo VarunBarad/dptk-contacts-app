@@ -14,9 +14,9 @@ import org.json.JSONObject;
  * Project: DP TradeKING Contacts
  */
 public final class APIHelper {
-  private static final String baseUrl = "http://139.59.21.204:8080/DP-TradeKING";
-  private static final String endpointSubBrokers = "/api/sub-brokers";
-  private static final String endpointAll = "/api/all";
+  private static final String baseUrl = "https://dp-tradeking-contacts.firebaseio.com";
+  private static final String endpointSubBrokers = "/subBrokers.json";
+  private static final String endpointAll = "/.json";
 
   public static String getSubBrokersUrl() {
     return APIHelper.baseUrl + APIHelper.endpointSubBrokers;

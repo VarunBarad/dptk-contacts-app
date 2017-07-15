@@ -4,6 +4,8 @@ import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.android.volley.Response;
@@ -38,11 +40,16 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     this.storageHelper = new StorageHelper(this);
 
     if (Helper.isConnectedToInternet(this)) {
-      this.showProgressDialog();
-      APIHelper.fetchAllData(this, this, this);
+      this.refreshData();
     } else if (!this.storageHelper.hasSubBrokersJson()) {
       this.blockUserInterface("No contacts available");
     }
+  }
+
+  @Override
+  public boolean onCreateOptionsMenu(Menu menu) {
+    getMenuInflater().inflate(R.menu.menu_home, menu);
+    return true;
   }
 
   @Override
@@ -58,6 +65,24 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         SubBrokersActivity.launchActivity(this);
         break;
     }
+  }
+
+  @Override
+  public boolean onOptionsItemSelected(MenuItem item) {
+    int id = item.getItemId();
+
+    switch (id) {
+      case R.id.action_refresh:
+        this.refreshData();
+        return true;
+      default:
+        return super.onOptionsItemSelected(item);
+    }
+  }
+
+  private void refreshData() {
+    this.showProgressDialog();
+    APIHelper.fetchAllData(this, this, this);
   }
 
   private void showProgressDialog() {
@@ -84,9 +109,9 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
   public void onResponse(JSONObject response) {
     this.dismissProgressDialog();
     try {
-      String subBrokersJson = response.getJSONObject("message").getJSONArray("subBrokers").toString();
-      String branchesJson = response.getJSONObject("message").getJSONArray("branches").toString();
-      String departmentsJson = response.getJSONObject("message").getJSONArray("headOffice").toString();
+      String subBrokersJson = response.getJSONArray("subBrokers").toString();
+      String branchesJson = response.getJSONArray("branches").toString();
+      String departmentsJson = response.getJSONArray("headOffice").toString();
       this.storageHelper
           .setBranchesJson(branchesJson)
           .setSubBrokersJson(subBrokersJson)

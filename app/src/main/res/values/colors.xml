@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#ff0f489f</color>
+    <color name="colorPrimaryDark">#ff0a2f67</color>
+    <color name="colorAccent">#ffEE1C25</color>
     <color name="textColorPrimary">#ffffff00</color>
     <color name="colorButton">#ff2196f3</color>
     <color name="colorTransparent">#00ffffff</color>
     <color name="inactiveTabTextColor">#ffe0e0e0</color>
     <color name="activeTabTextColor">#ffffffff</color>
+    <color name="red">#ffee1c25</color>
+    <color name="blue">#ff0f489f</color>
 </resources>

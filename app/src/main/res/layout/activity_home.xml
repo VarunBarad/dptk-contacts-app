@@ -21,75 +21,86 @@
             android:layout_height="0dp"
             android:layout_weight="1" />
 
-        <com.szugyi.circlemenu.view.CircleLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:firstChildPosition="North"
-            app:isRotating="false">
+            android:layout_height="wrap_content">
 
-            <android.support.v7.widget.LinearLayoutCompat
-                android:layout_width="wrap_content"
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerInParent="true"
+                app:srcCompat="@drawable/ic_dptk" />
+
+            <com.szugyi.circlemenu.view.CircleLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                app:firstChildPosition="North"
+                app:isRotating="false">
 
-                <android.support.design.widget.FloatingActionButton
-                    android:id="@+id/button_home_departments"
-                    android:layout_width="75dp"
-                    android:layout_height="75dp"
-                    android:tint="@android:color/white"
-                    app:srcCompat="@drawable/ic_call_black" />
-
-                <android.support.v7.widget.AppCompatTextView
-                    android:layout_width="match_parent"
+                <android.support.v7.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:paddingBottom="5dp"
-                    android:paddingTop="5dp"
-                    android:text="@string/headOffice_name" />
-            </android.support.v7.widget.LinearLayoutCompat>
+                    android:orientation="vertical">
 
-            <android.support.v7.widget.LinearLayoutCompat
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/button_home_departments"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:tint="@android:color/white"
+                        app:srcCompat="@drawable/ic_head_office_black" />
 
-                <android.support.design.widget.FloatingActionButton
-                    android:id="@+id/button_home_subBrokers"
-                    android:layout_width="75dp"
-                    android:layout_height="75dp"
-                    android:tint="@android:color/white"
-                    app:srcCompat="@drawable/ic_call_black" />
+                    <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:text="@string/headOffice_name" />
+                </android.support.v7.widget.LinearLayoutCompat>
 
-                <android.support.v7.widget.AppCompatTextView
-                    android:layout_width="match_parent"
+                <android.support.v7.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:paddingBottom="5dp"
-                    android:paddingTop="5dp"
-                    android:text="@string/subBrokers_name" />
-            </android.support.v7.widget.LinearLayoutCompat>
+                    android:orientation="vertical">
 
-            <android.support.v7.widget.LinearLayoutCompat
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/button_home_subBrokers"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:tint="@android:color/white"
+                        app:srcCompat="@drawable/ic_subbroker_black" />
 
-                <android.support.design.widget.FloatingActionButton
-                    android:id="@+id/button_home_branches"
-                    android:layout_width="75dp"
-                    android:layout_height="75dp"
-                    android:tint="@android:color/white"
-                    app:srcCompat="@drawable/ic_call_black" />
+                    <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:text="@string/subBrokers_name" />
+                </android.support.v7.widget.LinearLayoutCompat>
 
-                <android.support.v7.widget.AppCompatTextView
-                    android:layout_width="match_parent"
+                <android.support.v7.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:paddingBottom="5dp"
-                    android:paddingTop="5dp"
-                    android:text="@string/branches_name" />
-            </android.support.v7.widget.LinearLayoutCompat>
-        </com.szugyi.circlemenu.view.CircleLayout>
+                    android:orientation="vertical">
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/button_home_branches"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:tint="@android:color/white"
+                        app:srcCompat="@drawable/ic_branches_black" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:text="@string/branches_name" />
+                </android.support.v7.widget.LinearLayoutCompat>
+            </com.szugyi.circlemenu.view.CircleLayout>
+        </RelativeLayout>
 
         <android.support.v4.widget.Space
             android:layout_width="match_parent"

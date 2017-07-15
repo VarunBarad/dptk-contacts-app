@@ -128,7 +128,7 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:scaleType="fitCenter"
-                    app:srcCompat="@drawable/ic_business_black" />
+                    app:srcCompat="@drawable/ic_head_office_black" />
 
                 <android.support.v4.widget.Space
                     android:layout_width="15dp"
