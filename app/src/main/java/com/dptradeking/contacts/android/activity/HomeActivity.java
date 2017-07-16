@@ -1,6 +1,8 @@
 package com.dptradeking.contacts.android.activity;
 
 import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -22,6 +24,11 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
   private ProgressDialog progressDialog;
   private StorageHelper storageHelper;
+  
+  public static void startActivity(Context context) {
+    Intent intent = new Intent(context, HomeActivity.class);
+    context.startActivity(intent);
+  }
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
